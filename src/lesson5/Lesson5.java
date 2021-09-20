@@ -11,12 +11,9 @@ public class Lesson5 {
             summ += i;
         }
         System.out.println("Сумма трат за месяц составила " + summ + " рублей.");
-
         //2
-
         //Arrays.sort(arr);
         //System.out.println("Минимальная сумма трат за день составила " + arr[0] + " рублей. Максимальная сумма трат за день составила " + arr[arr.length - 1] + " рублей.");
-
         int minDaySpends = arr[0];
         int maxDaySpends = arr[0];
         for (int i = 0; i < arr.length - 1; i++) {
@@ -33,21 +30,15 @@ public class Lesson5 {
         double average = summ / arr.length;
 
         System.out.println("Средняя сумма трат за месяц составила " + average + " рублей.");
-
         //4
         char a;
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = 0; i < (reverseFullName.length - 1) / 2; i++) {
-            a = reverseFullName[i];
-            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
-            reverseFullName[reverseFullName.length - 1 - i] = a;
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
         }
-        System.out.println(Arrays.toString(reverseFullName));
-
+        System.out.println();
         //5
-
         int[][] matrix = new int[3][3];
-
         for (int i = 0; i < matrix.length; i++) {
             matrix[i][i] = 1;
             matrix[matrix.length - 1 - i][i] = 1;
@@ -58,19 +49,14 @@ public class Lesson5 {
             }
             System.out.println();
         }
-
         //6
         int[] arr1 = {5, 4, 3, 2, 1};
         int[] arr2 = new int[5];
-
         for (int i = arr1.length; i > 0; i--) {
-
             arr2[arr1.length - i] = arr1[i - 1];
-
         }
         System.out.println(Arrays.toString(arr1));
         System.out.println(Arrays.toString(arr2));
-
         //7
         System.out.println("Массив задача 7 [1]: " + Arrays.toString(arr1));
         int buf;
@@ -78,7 +64,6 @@ public class Lesson5 {
             buf = arr1[i];
             arr1[i] = arr1[arr1.length - 1 - i];
             arr1[arr1.length - 1 - i] = buf;
-
         }
         System.out.println("Массив задача 7 [2]: " + Arrays.toString(arr1));
 //8
@@ -87,7 +72,6 @@ public class Lesson5 {
         int ii = 0;
         int jj = arr3.length - 1;
         while (ii < (arr3.length - 1)) {
-
             if ((arr3[ii] + arr3[jj]) < -2) {
                 ii++;
             } else if ((arr3[ii] + arr3[jj]) > -2) {
@@ -96,12 +80,8 @@ public class Lesson5 {
                 System.out.println("Задача 8: " + arr3[ii] + " " + arr3[jj]);
                 break;
             }
-
-
         }
-
         //9
-
         System.out.println("Задача 9: ");
         for (int i = 0; i < arr3.length; i++) {
             for (int j = i + 1; j < arr3.length; j++) {
@@ -110,7 +90,6 @@ public class Lesson5 {
                 }
             }
         }
-
     }
 
     public static int[] generateRandomArray() {
