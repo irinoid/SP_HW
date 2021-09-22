@@ -93,8 +93,7 @@ public class Lesson7 {
     }
 
     public static double calculateAverageSpends(int arr[]) {
-        double avSpends = calculateArraySumm(arr) / arr.length;
-        return avSpends;
+        return calculateArraySumm(arr) / arr.length;
     }
 
     public static int calculateArraySumm(int arr[]) {
