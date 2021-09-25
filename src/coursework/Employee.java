@@ -1,17 +1,24 @@
-package CourseWork;
+package coursework;
+
+import java.util.Objects;
 
 public class Employee {
-    private static int id = 0;
+    private static int counter;
+    private final int id;
     private final String name;
-    int department;
-    double salary;
 
-    //int id = 0;
+    private int department;
+    private double salary;
 
     public Employee(String name, int department, int salary) {
         this.name = name;
         this.department = department;
         this.salary = salary;
+        this.id = ++counter;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -34,10 +41,20 @@ public class Employee {
         this.salary = salary;
     }
 
-    public static int getId() {
-        return id++;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
     public String toString() {
         return " - " + name + "; отдел " + department + "; заработная плата " + salary + " рублей.";
     }
